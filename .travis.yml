@@ -10,4 +10,4 @@ script:
   - cd tutorial-cypress
   - npm install
   - npx eyes-setup
-  - npx cypress run --spec "cypress/integration/examples/actions.spec.js"
+  - npx cypress run --spec "cypress/integration/examples/applitools.spec.js"
