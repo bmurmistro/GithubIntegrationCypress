@@ -1,7 +1,7 @@
 describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
     cy.visit('https://applitools.com/helloworld?diff1');
-    console.log("batch id: " + Cypress.env("APPLITOOLS_BATCH_ID"));
+    console.log("batch id: " + Cypress.env("APPLITOOLS_BATCH_ID"));`
     cy.eyesOpen({
       appName: 'Hello Cypress, This is Applitools!',
       testName: 'My first Cypress Test',
