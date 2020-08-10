@@ -21,10 +21,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+          working-directory: tutorial-cypress
       - run: npm ci
       - name: Run Tests
-        with:
-          working-directory: tutorial-cypress
         run: npm run cypress:ci
     
   batch-completion-notification:
