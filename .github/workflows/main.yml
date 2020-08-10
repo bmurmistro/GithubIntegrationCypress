@@ -1,14 +1,36 @@
-name: End-to-end tests
-on: [push]
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+        
+env:
+    APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+    APPLITOOLS_BATCH_ID: ${{ github.sha }}
+
 jobs:
-  cypress-run:
-    runs-on: ubuntu-16.04
+  run-tests:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: actions/checkout@v2
+      - name: Log Git SHA
+        run: echo "$GITHUB_SHA"
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          working-directory: tutorial-cypress
+          node-version: '14.x'
+      - run: npm ci
+      - name: Run Tests
+        run: npm run cypress:ci
+    
+  batch-completion-notification:
+    needs: run-tests
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Applitools batch status 
+        uses: wei/curl@v1.1.1
+        with:
+          args: -d "" -X POST https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${{ env.APPLITOOLS_BATCH_ID }}/complete?apiKey=${{ secrets.APPLITOOLS_API_KEY }}
