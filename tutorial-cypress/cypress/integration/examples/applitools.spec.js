@@ -3,8 +3,7 @@ describe('Hello Cypress, This is Applitools', () => {
     cy.visit('https://applitools.com/helloworld?diff1');
     cy.eyesOpen({
       appName: 'Hello Cypress, This is Applitools!',
-      testName: 'My first Cypress Test',
-      browser: { width: 800, height: 600 },
+      testName: 'My first Cypress Test'
     });
     cy.eyesCheckWindow('Login Page');
     cy.eyesClose();
