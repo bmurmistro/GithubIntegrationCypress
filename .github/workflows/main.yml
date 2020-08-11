@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm ci
+        working-directory: tutorial-cypress
       - name: Run Tests
         working-directory: tutorial-cypress
         run: npm run cypress:ci
