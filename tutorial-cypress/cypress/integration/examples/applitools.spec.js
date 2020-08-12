@@ -10,3 +10,18 @@ describe('Hello Cypress, This is Applitools', () => {
     cy.eyesClose();
   });
 });
+
+describe('Hello Cypress, This is AutoDesk Help', () => {
+  it('displays', () => {
+    cy.visit('https://www.autodesk.com/');
+    cy.eyesOpen({
+      appName: 'Hello Cypress, This is AutoDesk help!',
+      testName: 'Question Mark'
+    });
+    cy.eyesCheckWindow({
+      target: 'region',
+      selector: '.uh-fab'
+    });
+    cy.eyesClose();
+  });
+});
