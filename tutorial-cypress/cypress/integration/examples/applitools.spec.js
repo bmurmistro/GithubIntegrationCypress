@@ -23,9 +23,7 @@ describe('Hello Cypress, This is AutoDesk Help', () => {
       appName: 'Hello Cypress, This is AutoDesk help!',
       testName: 'Question Mark'
     });
-    cy.eyesCheckWindow('Hello');
-
-    cy.get('.uh-fab').should('be.visible');
+    cy.wait(20000);
 
     cy.eyesCheckWindow({
       target: 'region',
