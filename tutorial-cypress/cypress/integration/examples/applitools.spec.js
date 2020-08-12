@@ -18,17 +18,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Hello Cypress, This is AutoDesk Help', () => {
   it('displays', () => {
-    cy.visit('https://www.autodesk.com/');
+    cy.visit('https://knowledge.autodesk.com/');
     cy.eyesOpen({
       appName: 'Hello Cypress, This is AutoDesk help!',
       testName: 'Question Mark'
     });
-    cy.wait(20000);
+    
+    cy.get('.js-localized-path').click();
 
-    cy.eyesCheckWindow({
-      target: 'region',
-      selector: '.uh-fab'
-    });
+    cy.eyesCheckWindow('Hello');
+
     cy.eyesClose();
   });
 });
