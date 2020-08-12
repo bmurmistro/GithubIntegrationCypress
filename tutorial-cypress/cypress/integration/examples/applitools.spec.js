@@ -24,7 +24,7 @@ describe('Hello Cypress, This is AutoDesk Help', () => {
       testName: 'Question Mark'
     });
     
-    cy.contains('Contact Support').click();
+    cy.contains('Contact Support').click({ force: true });
 
     cy.eyesCheckWindow('Hello');
 
