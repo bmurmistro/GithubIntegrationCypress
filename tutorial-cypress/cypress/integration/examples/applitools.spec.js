@@ -18,14 +18,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Hello Cypress, This is AutoDesk Help', () => {
   it('displays', () => {
-    cy.visit('https://knowledge.autodesk.com/');
+    cy.visit('https://app.digital-help-prd.autodesk.com/universal-help/current/index.html?uhmParentUrl=https%3A%2F%2Fknowledge.autodesk.com%2Fcontact-support&amp;uhmParentDomain=https%3A%2F%2Fknowledge.autodesk.com&amp;uhmParentReferrer=&amp;language=en_US&amp;product=generic&amp;pageTitle=Contact%20Support%20%7C%20Autodesk%20Knowledge%20Network&amp;showFullPage=true&amp;containerId=uhm-widget&amp;analyticsLogging=false');
     cy.eyesOpen({
       appName: 'Hello Cypress, This is AutoDesk help!',
       testName: 'Question Mark'
     });
-    
-    cy.contains('Contact Support').click({ force: true });
-    cy.wait(4000);
+
     cy.eyesCheckWindow('Hello');
 
     cy.eyesClose();
