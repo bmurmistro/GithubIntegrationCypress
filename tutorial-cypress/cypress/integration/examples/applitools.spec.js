@@ -25,7 +25,7 @@ describe('Hello Cypress, This is AutoDesk Help', () => {
     });
     
     cy.contains('Contact Support').click({ force: true });
-
+    cy.wait(4000);
     cy.eyesCheckWindow('Hello');
 
     cy.eyesClose();
