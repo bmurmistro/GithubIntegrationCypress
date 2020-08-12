@@ -10,8 +10,8 @@ module.exports = {
     {width: 1024, height: 768, name: 'edgechromium'},
     {width: 800, height: 600, name: 'safari'},
     // Add mobile emulation devices in Portrait mode
-    {deviceName: 'iPhone X', screenOrientation: 'portrait'},
-    {deviceName: 'Pixel 2', screenOrientation: 'portrait'}
+    //{deviceName: 'iPhone X', screenOrientation: 'portrait'},
+    //{deviceName: 'Pixel 2', screenOrientation: 'portrait'}
   ],
   // set batch name to the configuration
   batchName: 'Cypress-GitAcions',
