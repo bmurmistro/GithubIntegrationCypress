@@ -24,7 +24,7 @@ describe('Hello Cypress, This is AutoDesk Help', () => {
       testName: 'Question Mark'
     });
     
-    cy.get('.js-localized-path').click();
+    cy.contains('Contact Support').click();
 
     cy.eyesCheckWindow('Hello');
 
