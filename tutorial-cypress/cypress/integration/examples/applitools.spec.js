@@ -18,11 +18,13 @@ describe('Hello Cypress, This is AutoDesk Help', () => {
       appName: 'Hello Cypress, This is AutoDesk help!',
       testName: 'Question Mark'
     });
-    cy.get('.uh-fab').should('be.visible');
-    cy.eyesCheckWindow({
+    //cy.get('.uh-fab').should('be.visible');
+    cy.eyesCheckWindow('Hello');
+
+    /*cy.eyesCheckWindow({
       target: 'region',
       selector: '.uh-fab'
-    });
+    });*/
     cy.eyesClose();
   });
 });
