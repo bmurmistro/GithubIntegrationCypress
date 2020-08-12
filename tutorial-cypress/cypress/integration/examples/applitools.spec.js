@@ -1,4 +1,4 @@
-describe('Hello Cypress, This is Applitools', () => {
+/*describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
     cy.visit('https://applitools.com/helloworld');
     cy.eyesOpen({
@@ -9,7 +9,7 @@ describe('Hello Cypress, This is Applitools', () => {
     //cy.contains('Click me!').click()
     cy.eyesClose();
   });
-});
+});*/
 
 describe('Hello Cypress, This is AutoDesk Help', () => {
   it('displays', () => {
