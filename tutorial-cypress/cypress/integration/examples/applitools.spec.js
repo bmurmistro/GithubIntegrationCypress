@@ -8,10 +8,10 @@ describe('Hello Cypress, This is Applitools', () => {
     cy.visit('https://applitools.com/helloworld');
     cy.eyesOpen({
       appName: 'Hello Cypress, This is Applitools!',
-      testName: 'Hello World'
+      testName: 'Auto Desk Hello World'
     });
-    cy.eyesCheckWindow('Hello');
     //cy.contains('Click me!').click()
+    cy.eyesCheckWindow('Hello');
     cy.eyesClose();
   });
 });
