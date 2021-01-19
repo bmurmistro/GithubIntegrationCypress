@@ -14,7 +14,24 @@ module.exports = {
     //{deviceName: 'Pixel 2', screenOrientation: 'portrait'}
   ],
   // set batch name to the configuration
-  batchName: 'Cypress-GitAcions',
+  batchName: 'Walmart',
   batchId: process.env.APPLITOOLS_BATCH_ID
 
 }
+    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+      try {
+          await eyes.closeAsync();
+
+          if (process.env.GIT_BRANCH === 'master') {
+            try {
+              await eyes.getRunner().getAllTestResults(true);
+            }
+            catch (e) {
+              context.test.callback(e);
+            }
+          }
+      }
+      finally() {
+         await eyes.abortAsync();
+      }
+    }
