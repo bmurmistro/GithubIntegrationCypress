@@ -5,13 +5,13 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
-    cy.visit('https://applitools.com/helloworld');
+    cy.visit('https://applitools.com/helloworld')
     cy.eyesOpen({
-      appName: 'Walmart App',
-      testName: 'Walmart Hello World'
+      appName: 'Demo App',
+      testName: 'Demo Hello World'
     });
     cy.eyesCheckWindow('Inital Screen');
-    cy.contains('Click me!').click();
+    //cy.contains('Click me!').click();
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
   });
