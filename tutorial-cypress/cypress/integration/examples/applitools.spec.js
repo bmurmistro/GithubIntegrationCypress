@@ -10,7 +10,6 @@ describe('Hello Cypress, This is Applitools', () => {
       appName: 'Demo App',
       testName: 'Demo Hello World'
     });
-    cy.eyesCheckWindow('Inital Screen');
     //cy.contains('Click me!').click();
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
