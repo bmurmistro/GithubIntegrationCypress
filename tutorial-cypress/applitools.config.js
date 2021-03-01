@@ -28,6 +28,13 @@ module.exports = {
             catch (e) {
               context.test.callback(e);
             }
+          } else {
+              try {
+                await eyes.getRunner().getAllTestResults(false);
+              }
+              catch (e) {
+                context.test.callback(e);
+              }
           }
       }
       finally() {
