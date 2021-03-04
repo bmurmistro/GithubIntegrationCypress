@@ -18,24 +18,15 @@ module.exports = {
 
 }
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+      console.log("*******************");
       try {
           await eyes.closeAsync();
-
-          if (process.env.GIT_BRANCH === 'master') {
-            try {
-              await eyes.getRunner().getAllTestResults(true);
-            }
-            catch (e) {
-              context.test.callback(e);
-            }
-          } else {
-              try {
-                await eyes.getRunner().getAllTestResults(false);
-              }
-              catch (e) {
-                context.test.callback(e);
-              }
-          }
+        try {
+          await eyes.getRunner().getAllTestResults(false);
+        }
+        catch (e) {
+          context.test.callback(e);
+        }
       }
       finally() {
          await eyes.abortAsync();
