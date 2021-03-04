@@ -3,7 +3,7 @@ module.exports = {
   //
   browser: [
     // Add browsers with different viewports
-    {width: 1792, height: 904, name: 'chrome'},
+    {width: 1000, height: 660, name: 'chrome'},
     //{width: 700, height: 500, name: 'firefox'},
     //{width: 1600, height: 1200, name: 'ie11'},
     //{width: 1024, height: 768, name: 'edgechromium'},
