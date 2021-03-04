@@ -14,21 +14,6 @@ module.exports = {
   ],
   // set batch name to the configuration
   batchName: 'Demo',
-  batchId: process.env.APPLITOOLS_BATCH_ID
-
+  batchId: process.env.APPLITOOLS_BATCH_ID,
+  failCypressOnDiff: false
 }
-    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
-      console.log("*******************");
-      try {
-          await eyes.closeAsync();
-        try {
-          await eyes.getRunner().getAllTestResults(false);
-        }
-        catch (e) {
-          context.test.callback(e);
-        }
-      }
-      finally() {
-         await eyes.abortAsync();
-      }
-    }
