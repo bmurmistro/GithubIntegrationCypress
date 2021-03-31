@@ -1,5 +1,6 @@
 module.exports = {
   concurrency: 10,
+
   //
   browser: [
     // Add browsers with different viewports
