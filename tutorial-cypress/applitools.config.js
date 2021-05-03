@@ -15,7 +15,7 @@ module.exports = {
   ],
   // set batch name to the configuration
   batchName: 'Demo',
-  serverUrl: 'https://testeyesapi.applitools.com'
+  serverUrl: 'https://testeyesapi.applitools.com',
   batchId: process.env.APPLITOOLS_BATCH_ID,
   failCypressOnDiff: false
 }
