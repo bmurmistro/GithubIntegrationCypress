@@ -24,7 +24,7 @@ module.exports = {
   ],
   // set batch name to the configuration
   batchName: 'Demo',
-  branchName: 'bmurmistro/GithubIntegrationCypress/gap_demo',
+  branchName: 'bmurmistro/GithubIntegrationCypress/master',
   //serverUrl: 'https://testeyesapi.applitools.com',
   batchId: process.env.APPLITOOLS_BATCH_ID,
   failCypressOnDiff: false
