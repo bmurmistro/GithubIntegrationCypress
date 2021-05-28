@@ -1,3 +1,12 @@
+const { exec } = require('child_process');
+exec('git branch --show-current', (err, stdout, stderr) => {
+    console.log('****** ' + stdout)
+    if (err) {
+        // handle your error
+    }
+});
+
+
 module.exports = {
   concurrency: 10,
 
@@ -15,7 +24,8 @@ module.exports = {
   ],
   // set batch name to the configuration
   batchName: 'Demo',
-  serverUrl: 'https://testeyesapi.applitools.com',
+  branchName: 'bmurmistro/GithubIntegrationCypress/gap_demo',
+  //serverUrl: 'https://testeyesapi.applitools.com',
   batchId: process.env.APPLITOOLS_BATCH_ID,
   failCypressOnDiff: false
 }
