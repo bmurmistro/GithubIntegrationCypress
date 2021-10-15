@@ -1,15 +1,5 @@
-const { exec } = require('child_process');
-exec('git branch --show-current', (err, stdout, stderr) => {
-    console.log('****** ' + stdout)
-    if (err) {
-        // handle your error
-    }
-});
-
-
 module.exports = {
-  concurrency: 10,
-
+  testConcurrency: 4,
   //
   browser: [
     // Add browsers with different viewports
