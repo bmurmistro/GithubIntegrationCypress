@@ -19,7 +19,7 @@ pipeline {
         dir("tutorial-cypress") {
             sh 'npm ci'
             sh 'npx eyes-setup'
-            Applitools(serverUrl: ${APPLITOOLS_SERVER_URL}, notifyByCompletion: false, applitoolsApiKey: ${APPLITOOLS_API_KEY}) {
+            Applitools(serverUrl: "${APPLITOOLS_SERVER_URL}", notifyByCompletion: false, applitoolsApiKey: "${APPLITOOLS_API_KEY}") {
                 sh "./node_modules/cypress/bin/cypress run --spec \"cypress/integration/examples/applitools.spec.js\""
             }
         }
