@@ -9,6 +9,7 @@ pipeline {
   stages {
     stage('build and test') {
       environment {
+        APPLITOOLS_API_KEY     = credentials('APPLITOOLS_API_KEY')
       }
 
       steps {
