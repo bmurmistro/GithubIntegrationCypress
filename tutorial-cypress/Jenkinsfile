@@ -15,6 +15,9 @@ pipeline {
       }
 
       steps {
+        dir("tutorial-cypress") {
+          sh "pwd"
+        }
         sh 'npm ci'
         sh 'npx eyes-setup'
         sh "./node_modules/cypress/bin/cypress run --spec \"cypress/integration/examples/applitools.spec.js\""
