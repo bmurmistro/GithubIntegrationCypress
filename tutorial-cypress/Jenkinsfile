@@ -19,7 +19,9 @@ pipeline {
         dir("tutorial-cypress") {
             sh 'npm ci'
             sh 'npx eyes-setup'
-            sh "./node_modules/cypress/bin/cypress run --spec \"cypress/integration/examples/applitools.spec.js\""
+            Applitools() {
+                sh "./node_modules/cypress/bin/cypress run --spec \"cypress/integration/examples/applitools.spec.js\""
+            }
         }
       }
     }
