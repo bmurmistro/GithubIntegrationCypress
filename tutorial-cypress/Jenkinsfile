@@ -10,7 +10,7 @@ pipeline {
     stage('build and test') {
       environment {
         APPLITOOLS_API_KEY = credentials('APPLITOOLS_API_KEY')
-        APPLITOOLS_BATCH_ID = ${GIT_COMMIT}
+        APPLITOOLS_BATCH_ID = "${GIT_COMMIT}"
       }
 
       steps {
