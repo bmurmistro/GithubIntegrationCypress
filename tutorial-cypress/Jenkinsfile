@@ -9,12 +9,14 @@ pipeline {
   stages {
     stage('build and test') {
       environment {
-        APPLITOOLS_API_KEY     = credentials('APPLITOOLS_API_KEY')
+        APPLITOOLS_API_KEY = credentials('APPLITOOLS_API_KEY')
+        APPLITOOLS_BATCH_ID = ${GIT_COMMIT}
       }
 
       steps {
         sh 'npm ci'
-        sh "npm run test:ci:record"
+        sh 'npx eyes-setup'
+        sh "./node_modules/cypress/bin/cypress run --spec \"cypress/integration/examples/applitools.spec.js\""
       }
     }
   }
