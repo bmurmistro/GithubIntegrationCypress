@@ -12,14 +12,13 @@ pipeline {
       environment {
         APPLITOOLS_API_KEY = credentials('APPLITOOLS_API_KEY')
         APPLITOOLS_BATCH_ID = "${GIT_COMMIT}"
-        APPLITOOLS_SERVER_URL = "https://eyesapi.applitools.com"
       }
 
       steps {
         dir("tutorial-cypress") {
             sh 'npm ci'
             sh 'npx eyes-setup'
-            Applitools(serverURL: "${APPLITOOLS_SERVER_URL}", notifyByCompletion: false, applitoolsApiKey: "${APPLITOOLS_API_KEY}") {
+            Applitools(serverURL: "https://eyes.applitools.com", notifyByCompletion: false, applitoolsApiKey: "${APPLITOOLS_API_KEY}") {
                 sh "./node_modules/cypress/bin/cypress run --spec \"cypress/integration/examples/applitools.spec.js\""
             }
         }
