@@ -1,16 +1,17 @@
 pipeline {
-  //agent {
+  agent {
     // this image provides everything needed to run Cypress
-    //docker {
-      //image 'cypress/base:10'
-    //}
-  //}
+    docker {
+      image 'cypress/base:10'
+    }
+  }
 
   stages {
     stage('build and test') {
       environment {
         APPLITOOLS_API_KEY = credentials('APPLITOOLS_API_KEY')
         APPLITOOLS_BATCH_ID = "${GIT_COMMIT}"
+        APPLITOOLS_SERVER_URL = "https://eyesapi.applitools.com"
       }
 
       steps {
