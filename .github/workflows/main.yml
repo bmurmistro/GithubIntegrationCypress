@@ -2,8 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - '**'
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
         
 env:
     APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
