@@ -13,7 +13,7 @@ module.exports = {
     //{deviceName: 'Pixel 2', screenOrientation: 'portrait'}
   ],
   // set batch name to the configuration
-  batchName: 'Demo',
+  //batchName: 'Demo',
   //branchName: 'bmurmistro/GithubIntegrationCypress/master',
   //serverUrl: 'https://testeyesapi.applitools.com',
   batchId: process.env.APPLITOOLS_BATCH_ID,
