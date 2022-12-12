@@ -7,7 +7,7 @@ describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
     cy.visit('https://applitools.com/helloworld/?diff1')
     cy.eyesOpen({
-      appName: 'Demo App Autodesk - PC',
+      appName: 'Demo App Yahoo',
       testName: 'Demo Hello World'
     });
     //cy.contains('Click me!').click();
