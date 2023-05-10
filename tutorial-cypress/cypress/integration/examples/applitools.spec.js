@@ -13,6 +13,6 @@ describe('Hello Cypress, This is Applitools', () => {
     cy.contains('Click me!').click();
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
-
+    //timestamp test
   });
 });
