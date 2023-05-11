@@ -1,6 +1,6 @@
 const { execSync } = require('child_process')
 module.exports = {
-  batchName: 'BRANDON',
+  //batchName: 'BRANDON',
   testConcurrency: 4,
   browser: [
     // Add browsers with different viewports
