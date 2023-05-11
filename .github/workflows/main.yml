@@ -12,9 +12,6 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: set batchId
-        - run |
-
       - name: Checkout
         uses: actions/checkout@v2
       - name: Log Git SHA
