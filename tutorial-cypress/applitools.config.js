@@ -1,12 +1,11 @@
-const { exec } = require('child_process');
-function getHeadHash() {
+const { execSync } = require('child_process')
+function getHeadHash()
   return execSync('git rev-parse --verify HEAD').toString();
 }
 
 module.exports = {
   testConcurrency: 4,
   batchId: getHeadHash(),
-  //
   browser: [
     // Add browsers with different viewports
     {width: 1000, height: 660, name: 'chrome'},
