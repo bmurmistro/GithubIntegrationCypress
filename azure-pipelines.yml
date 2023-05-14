@@ -22,4 +22,4 @@ steps:
   workingDirectory: 'tutorial-cypress'
   env:
     APPLITOOLS_API_KEY: $(applitools.api.key)
-    APPLITOOLS_BATCH_ID: $(System.Pullrequest.SourceBranch)
+    APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
