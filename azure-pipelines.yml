@@ -12,10 +12,14 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- script: |
+    npm install
+  displayName: 'npm install'
+  workingDirectory: 'tutorial-cypress'
 - script: |
     ./node_modules/cypress/bin/cypress run
   displayName: 'Cypress Run'
+  workingDirectory: 'tutorial-cypress'
   env:
     APPLITOOLS_API_KEY: $(applitools.api.key)
     APPLITOOLS_BATCH_ID: $(Build.SourceVersion)
