@@ -8,6 +8,14 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+variables:
+  - name: commitSha
+  # System.PullRequest.SourceCommitId is not defined
+    ${{ if eq(variables['System.PullRequest.SourceCommitId'], '') }}:
+     value: $(Build.SourceVersion)
+  # System.PullRequest.SourceCommitId is defined 
+    ${{ if ne(variables['System.PullRequest.SourceCommitId'], '') }}: 
+     value: $(System.PullRequest.SourceCommitId)
 
 steps:
 - script: echo Hello, world!
@@ -22,4 +30,6 @@ steps:
   workingDirectory: 'tutorial-cypress'
   env:
     APPLITOOLS_API_KEY: $(applitools.api.key)
-    APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
+    APPLITOOLS_BATCH_ID: $(commitSha)
+
+
