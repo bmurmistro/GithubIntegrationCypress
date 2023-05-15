@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 variables:
   - name: commitSha
-  # System.PullRequest.SourceCommitId is not defined
+  # Use Build.SourceVersion if we aren't in a PR
     ${{ if ne(variables['Build.Reason'], 'PullRequest') }}:
      value: $(Build.SourceVersion)
-  # System.PullRequest.SourceCommitId is defined 
+  # Use System.PullRequest.SourceCommitId if we are in PR
     ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
      value: $(System.PullRequest.SourceCommitId)
 
