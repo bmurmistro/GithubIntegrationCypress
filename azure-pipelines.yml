@@ -11,10 +11,10 @@ pool:
 variables:
   - name: commitSha
   # System.PullRequest.SourceCommitId is not defined
-    ${{ if eq(variables['System.PullRequest.SourceCommitId'], '') }}:
+    ${{ if ne(variables['Build.Reason'], 'PullRequest') }}:
      value: $(Build.SourceVersion)
   # System.PullRequest.SourceCommitId is defined 
-    ${{ if ne(variables['System.PullRequest.SourceCommitId'], '') }}: 
+    ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
      value: $(System.PullRequest.SourceCommitId)
 
 steps:
