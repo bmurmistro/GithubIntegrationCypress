@@ -14,6 +14,5 @@ describe('Hello Cypress, This is Applitools', () => {
     //cy.contains('?diff2').click();
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
-
   });
 });
