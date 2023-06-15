@@ -7,7 +7,7 @@ describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
     cy.visit('https://applitools.com/helloworld')
     cy.eyesOpen({
-      appName: 'Demo App Walmart Github',
+      appName: 'Demo App Walmart Github2',
       testName: 'Demo Hello World'
     });
     cy.contains('?diff2').click();
