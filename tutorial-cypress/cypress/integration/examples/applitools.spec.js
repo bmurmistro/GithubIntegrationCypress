@@ -11,7 +11,7 @@ describe('Hello Cypress, This is Applitools', () => {
       testName: 'Demo MDS'
     });
     //cy.contains('?diff2').click();
-    //cy.contains('Click me!').click();
+    cy.contains('Click me!').click();
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
   });
