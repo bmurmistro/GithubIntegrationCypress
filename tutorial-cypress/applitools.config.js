@@ -16,7 +16,7 @@ module.exports = {
   //batchName: 'Demo',
   //branchName: 'bmurmistro/GithubIntegrationCypress/master',
   //serverUrl: 'https://testeyesapi.applitools.com',
-  batchId: process.env.APPLITOOLS_BATCH_ID,
+  //batchId: process.env.APPLITOOLS_BATCH_ID,
   failCypressOnDiff: false,
   dontCloseBatches: true
 }
