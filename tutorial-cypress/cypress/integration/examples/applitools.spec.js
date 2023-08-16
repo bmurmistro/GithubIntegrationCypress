@@ -7,11 +7,11 @@ describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
     cy.visit('https://applitools.com/helloworld')
     cy.eyesOpen({
-      appName: 'Demo MDS Demo',
-      testName: 'Demo MDS'
+      appName: 'Brandon Demo',
+      testName: 'Brandon Demo'
     });
     //cy.contains('?diff2').click();
-    cy.contains('Click me!').click();
+    //cy.contains('Click me!').click();
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
   });
