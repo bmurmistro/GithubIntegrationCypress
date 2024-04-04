@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes-cypress": "3.41.0",
+    "@applitools/eyes-cypress": "3.43.1",
     "cypress": "^9.1.0",
     "cypress-intellij-reporter": "0.0.4"
   }
