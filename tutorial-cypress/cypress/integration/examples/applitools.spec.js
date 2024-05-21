@@ -15,4 +15,5 @@ describe('Hello Cypress, This is Applitools', () => {
     cy.eyesCheckWindow('Hello');
     cy.eyesClose();
   });
+
 });
