@@ -18,7 +18,6 @@
 import '@applitools/eyes-cypress/commands'
 
 import './commands'
-import "@applitools/testgenai-cypress/dist/commands";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
