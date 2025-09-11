@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes-cypress": "3.43.1",
-    "cypress": "^9.1.0",
+    "@applitools/eyes-cypress": "3.53.2",
+    "cypress": "14.5.4",
     "cypress-intellij-reporter": "0.0.4"
+  },
+  "dependencies": {
+    "@applitools/testgenai-cypress": "^0.8.23"
   }
 }

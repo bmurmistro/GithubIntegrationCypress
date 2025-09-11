@@ -5,15 +5,14 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
-    cy.visit('https://applitools.com/helloworld')
+    cy.visit('https://demo.applitools.com/loginBefore.html')
     cy.eyesOpen({
-      appName: 'Capital One Example',
-      testName: 'Hello'
+      appName: 'Optum',
+      testName: 'Login'
     });
     //cy.contains('?diff1').click();
     //cy.contains('Click me!').click();
-    cy.eyesCheckWindow('Hello');
+    cy.eyesCheckWindow();
     cy.eyesClose();
   });
-
 });

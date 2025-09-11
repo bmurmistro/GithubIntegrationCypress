@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  pull_request:
+  merge_group:
+on:
   push:
     branches:
       - '**'
@@ -14,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Log Git SHA
         run: echo "$GITHUB_SHA"
       - name: Use Node.js
@@ -22,7 +25,7 @@ jobs:
         with:
           node-version: '14.x'
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           working-directory: tutorial-cypress
     
