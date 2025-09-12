@@ -5,8 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
-    cy.visit('https://demo.applitools.com/loginBefore
-    .html')
+    cy.visit('https://demo.applitools.com/loginBefore.html')
     cy.eyesOpen({
       appName: 'Optum',
       testName: 'Login'
