@@ -2,11 +2,9 @@ name: CI
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened] # Triggers on PR activity for initial checks
   merge_group:
-  push:
-    branches:
-      - '**'
-        
+    types: [checks_requested] # Triggers when a PR is added to the merge queue
 env:
     APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
     APPLITOOLS_BATCH_ID: ${{ github.sha }}
