@@ -3,6 +3,9 @@ name: CI
 on:
   pull_request:
   merge_group:
+  push:
+    branches:
+      - master # Triggers on pushes to the master branch
 env:
     APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
     APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
