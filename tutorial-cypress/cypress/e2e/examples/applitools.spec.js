@@ -10,8 +10,8 @@ describe('Hello Cypress, This is Applitools', () => {
       appName: 'Demo',
       testName: 'Hello'
     });
-    //cy.contains('?diff1').click();
-    cy.contains('Click me!').click();
+    cy.contains('?diff1').click();
+    //cy.contains('Click me!').click();
     cy.eyesCheckWindow();
     cy.eyesClose();
   });
