@@ -2,10 +2,13 @@ name: CI
 
 on:
   pull_request:
+  push:
+    branches:
+      - master # Triggers on pushes to the master branch
   merge_group:
 env:
     APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
-    APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
+    APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha || github.sha }}
 
 jobs:
   run-tests:
