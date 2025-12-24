@@ -7,7 +7,7 @@ describe('Hello Cypress, This is Applitools', () => {
   it('works', () => {
     cy.visit('https://demo.applitools.com/loginBefore.html')
     cy.eyesOpen({
-      appName: 'Optum',
+      appName: 'GitDemoTest',
       testName: 'Login'
     });
     //cy.contains('?diff1').click();
